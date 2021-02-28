@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764655804435",
+    "project_id": "social-adda-8b775",
+    "storage_bucket": "social-adda-8b775.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764655804435:android:6f8b623fed71203ce79fe6",
+        "android_client_info": {
+          "package_name": "com.example.socialadda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764655804435-jsfrtj44ep0ggau6cltousojn4jmf2sl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTn_d22mx10Ry9vhqWSEWz4LYR9LXbe-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764655804435-jsfrtj44ep0ggau6cltousojn4jmf2sl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
