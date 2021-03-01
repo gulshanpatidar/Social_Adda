@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.example.socialadda.daos.UserDao
 import com.example.socialadda.databinding.ActivitySignInBinding
+import com.example.socialadda.models.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -51,6 +53,13 @@ class SignInActivity : AppCompatActivity() {
         binding.signInButton.setOnClickListener{
             signIn()
         }
+    }
+
+    //in the onStart we are fetching the user from the auth and passing it to updateUI so that user don't need to sign in if he already signed in into our app
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        updateUI(currentUser)
     }
 
     private fun signIn() {
@@ -108,6 +117,15 @@ class SignInActivity : AppCompatActivity() {
     private fun updateUI(firebaseUser: FirebaseUser?) {
         //if user is not null, that means signIn is successful, then start the main activity
         if (firebaseUser!=null){
+
+            //create the instance of user from the information received from the firebase user
+            val user = User(firebaseUser.uid,firebaseUser.displayName,firebaseUser.photoUrl.toString())
+            //create instance of the dao so that we can use addUser method od that
+            val usersDao = UserDao()
+            //add the user with the help of dao
+            usersDao.addUser(user)
+
+            //start the main activity
             val mainActivityIntent = Intent(this,MainActivity::class.java)
             startActivity(mainActivityIntent)
             finish()
