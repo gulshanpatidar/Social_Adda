@@ -32,5 +32,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+
+
+        binding.addPostButton.setOnClickListener{
+            val intent = Intent(this, CreatePostActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
