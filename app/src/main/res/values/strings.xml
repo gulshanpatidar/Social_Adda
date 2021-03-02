@@ -3,4 +3,6 @@
     <string name="this_button_is_used_to_add_post">this button is used to add post</string>
     <string name="post_input_hint">What do you want to post today?</string>
     <string name="post_button_text">POST</string>
+    <string name="image_for_the_like_button">image for the like button</string>
+    <string name="image_for_the_photo_of_user">image for the photo of user</string>
 </resources>
